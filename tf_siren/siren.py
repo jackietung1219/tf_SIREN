@@ -26,7 +26,7 @@ class SIRENFirstLayerInitializer(tf.keras.initializers.Initializer):
 
 class SIRENInitializer(tf.keras.initializers.VarianceScaling):
 
-    def __init__(self, w0: float = 1.0, c: float = 6.0, seed: int = None):
+    def __init__(self, scale = 1.0, w0: float = 1.0, c: float = 6.0, seed: int = None, mode='fan_in', distribution='uniform'):
         # Uniform variance scaler multiplies by 3.0 for limits, so scale down here to compensate
         self.w0 = w0
         self.c = c
